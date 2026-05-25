@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emmanuel C. Ikehi — AI Automation Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #0f0f0f;
+    --white: #fafaf8;
+    --warm: #f5f2ec;
+    --gold: #c9a84c;
+    --gold-light: #e8d5a3;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --border: rgba(0,0,0,0.08);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(250,250,248,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--black); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 0.85rem; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--black); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 6rem 4rem; gap: 5rem; }
+  .hero-text { }
+  .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 4vw, 3.8rem); font-weight: 700; line-height: 1.15; margin-bottom: 1.5rem; }
+  .hero-title em { font-style: italic; color: var(--gold); }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 480px; line-height: 1.8; margin-bottom: 2.5rem; }
+  .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; background: var(--black); color: var(--white); padding: 0.85rem 2rem; border-radius: 2px; font-size: 0.88rem; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
+  .btn-primary:hover { background: #333; }
+  .btn-outline { display: inline-block; background: transparent; color: var(--black); padding: 0.85rem 2rem; border-radius: 2px; font-size: 0.88rem; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; border: 1px solid var(--black); transition: all 0.2s; }
+  .btn-outline:hover { background: var(--black); color: var(--white); }
+  .hero-image { position: relative; }
+  .photo-frame { position: relative; width: 100%; max-width: 420px; margin: 0 auto; }
+  .photo-frame::before { content: ''; position: absolute; top: 20px; left: 20px; right: -20px; bottom: -20px; border: 2px solid var(--gold-light); border-radius: 2px; z-index: 0; }
+  .photo-frame img { width: 100%; height: 520px; object-fit: cover; object-position: center top; border-radius: 2px; position: relative; z-index: 1; display: block; }
+  .cred-strip { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 1.5rem; }
+  .cred-item { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; }
+  .cred-item span { color: var(--gold); margin-right: 0.4rem; }
+
+  /* SECTION BASE */
+  section { padding: 6rem 6rem; }
+  .section-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; margin-bottom: 1.2rem; line-height: 1.2; }
+  .section-desc { color: var(--muted); max-width: 560px; line-height: 1.8; font-size: 0.97rem; }
+
+  /* PAIN */
+  .pain { background: var(--warm); }
+  .pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .pain-card { background: var(--white); padding: 1.75rem 1.5rem; border-radius: 2px; border: 1px solid var(--border); }
+  .pain-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .pain-card h3 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .pain-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+  /* HOW */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; position: relative; }
+  .steps::before { content: ''; position: absolute; top: 1.5rem; left: 12.5%; right: 12.5%; height: 1px; background: var(--gold-light); }
+  .step { position: relative; }
+  .step-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 1rem; }
+  .step h3 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+  /* DEMOS */
+  .demos { background: var(--black); color: var(--white); }
+  .demos .section-title { color: var(--white); }
+  .demos .section-desc { color: rgba(255,255,255,0.5); }
+  .demos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .demo-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; padding: 2.5rem; transition: border-color 0.3s; }
+  .demo-card:hover { border-color: var(--gold); }
+  .demo-tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+  .demo-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--white); }
+  .demo-card p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 1.75rem; }
+  .demo-note { font-size: 0.78rem; color: rgba(255,255,255,0.3); margin-bottom: 1.5rem; font-style: italic; }
+  .btn-gold { display: inline-block; background: var(--gold); color: var(--black); padding: 0.8rem 1.75rem; border-radius: 2px; font-size: 0.85rem; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; transition: opacity 0.2s; }
+  .btn-gold:hover { opacity: 0.85; }
+
+  /* INDUSTRIES */
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+  .tag { font-size: 0.82rem; padding: 0.4rem 1rem; border: 1px solid var(--border); border-radius: 99px; color: var(--muted); background: var(--warm); }
+
+  /* ABOUT */
+  .about { display: grid; grid-template-columns: 340px 1fr; gap: 6rem; align-items: start; }
+  .about-photo { position: relative; }
+  .about-photo img { width: 100%; height: 400px; object-fit: cover; object-position: center top; border-radius: 2px; display: block; }
+  .badges { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem; }
+  .badge { font-size: 0.75rem; color: var(--muted); padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 2px; display: inline-block; }
+  .about-text p { color: var(--muted); line-height: 1.9; font-size: 0.97rem; margin-bottom: 1rem; }
+
+  /* CTA */
+  .cta { background: var(--warm); text-align: center; padding: 8rem 6rem; }
+  .cta .section-title { max-width: 620px; margin: 0.5rem auto 1rem; }
+  .cta .section-desc { margin: 0 auto 2.5rem; }
+  .contact-line { font-size: 0.85rem; color: var(--muted); margin-top: 1.25rem; }
+  .contact-line a { color: var(--black); }
+
+  /* FOOTER */
+  footer { padding: 2rem 6rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-size: 0.8rem; color: var(--muted); }
+
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .service-card { background: var(--white); border: 1px solid var(--border); border-radius: 2px; padding: 2rem; position: relative; transition: box-shadow 0.2s; }
+  .service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+  .service-card.featured { border-color: var(--gold); }
+  .service-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+  .service-badge { position: absolute; top: 1.25rem; right: 1.25rem; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; background: var(--gold); color: var(--white); padding: 0.25rem 0.6rem; border-radius: 2px; }
+  .service-card h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.6rem; }
+  .service-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+  .service-card ul { list-style: none; margin-bottom: 1.25rem; }
+  .service-card ul li { font-size: 0.8rem; color: var(--muted); padding: 0.2rem 0; padding-left: 1rem; position: relative; }
+  .service-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+  .btn-service { font-size: 0.82rem; color: var(--black); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--gold); padding-bottom: 1px; transition: color 0.2s; }
+  .btn-service:hover { color: var(--gold); }
+  @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; } }
+
+
+    .hero { grid-template-columns: 1fr; padding: 7rem 2rem 4rem; gap: 3rem; }
+    .hero-image { order: -1; }
+    .photo-frame { max-width: 320px; }
+    .photo-frame img { height: 380px; }
+    section { padding: 4rem 2rem; }
+    .pain-grid, .steps, .demos-grid { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; }
+    .about-photo img { height: 300px; }
+    .cta { padding: 5rem 2rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Emmanuel C. Ikehi</a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#how">How it works</a>
+    <a href="#demos">Live demos</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">AI Automation Consulting</p>
+    <h1 class="hero-title">Stop qualifying leads.<br>Let your <em>AI agent</em> do it.</h1>
+    <p class="hero-sub">I build custom AI agents that act as your digital front office — handling inquiries 24/7, qualifying prospects, and delivering structured lead summaries to your inbox so you only speak to people ready to buy.</p>
+    <div class="btn-row">
+      <a href="https://bit.ly/4cw4dHi" target="_blank" class="btn-primary">Try live demo (Property)</a>
+      <a href="mailto:c.emmaikehi@gmail.com" class="btn-outline">Get in touch</a>
+    </div>
+    <div class="cred-strip" style="margin-top:2rem;">
+      <p class="cred-item"><span>✦</span> MBA — Lagos Business School</p>
+      <p class="cred-item"><span>✦</span> PRINCE2 Practitioner · AMBCS</p>
+      <p class="cred-item"><span>✦</span> Y Combinator Alumni · 15+ years experience</p>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="photo-frame">
+      <img src="IMG_20240318_161147_184.jpg" alt="Emmanuel C. Ikehi" onerror="this.style.background='#e8d5a3';this.style.display='flex';this.alt='ECI';">
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain" id="problem">
+  <p class="section-label">The problem</p>
+  <h2 class="section-title">The Founder's Trap</h2>
+  <p class="section-desc">If you're the only one who can qualify your leads, you don't own a scalable business. You own a very stressful job.</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">💬</div>
+      <h3>100+ unread messages</h3>
+      <p>Every Monday starts with damage control instead of strategy and decisions.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">⏱</div>
+      <h3>Slow response times</h3>
+      <p>Leads go cold while you're in meetings, asleep, or doing actual work that matters.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">📋</div>
+      <h3>Manual data entry</h3>
+      <p>Copying WhatsApp conversations into spreadsheets is not a growth strategy.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">🔍</div>
+      <h3>No lead visibility</h3>
+      <p>You can't remember who said "ready to pay" in the flood of DMs and messages.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <p class="section-label">How it works</p>
+  <h2 class="section-title">Your digital front office</h2>
+  <p class="section-desc">Four steps. Zero manual work on your end.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Inquiry arrives</h3>
+      <p>A prospect messages via WhatsApp, website, or any channel — at any hour, any day.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Agent qualifies</h3>
+      <p>Your AI agent responds instantly, asks smart questions, extracts budget, timeline and intent.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Summary delivered</h3>
+      <p>A clean, structured lead brief lands in your Telegram or email — only the gold leads.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>You close</h3>
+      <p>You step in only when a lead is qualified, serious, and ready to move forward.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEMOS -->
+<section class="demos" id="demos">
+  <p class="section-label" style="color:var(--gold);">Live demos</p>
+  <h2 class="section-title">See it working — right now</h2>
+  <p class="section-desc">These are not videos. Type to them like WhatsApp and watch them qualify you as a lead in real time.</p>
+  <div class="demos-grid">
+    <div class="demo-card">
+      <p class="demo-tag">Industry: Real estate &amp; property</p>
+      <h3>Property Inquiry Agent</h3>
+      <p>Handles inbound property inquiries, qualifies budget and requirements, and delivers a structured brief to your inbox — instantly, 24/7.</p>
+      <p class="demo-note">Type to it naturally — ask about properties, pricing, availability.</p>
+      <a href="https://bit.ly/4cw4dHi" target="_blank" class="btn-gold">Try property demo →</a>
+    </div>
+    <div class="demo-card">
+      <p class="demo-tag">Industry: Forex &amp; trading</p>
+      <h3>MT5 EA Setup Agent</h3>
+      <p>Qualifies traders interested in MT5 Expert Advisor setup services — gathering requirements, budget, and timeline before you ever get involved.</p>
+      <p class="demo-note">Ask about EA setup, MT5 configuration, or trading requirements.</p>
+      <a href="https://bit.ly/3QtB1YO" target="_blank" class="btn-gold">Try forex demo →</a>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section>
+  <p class="section-label">Industries served</p>
+  <h2 class="section-title">Built for your sector</h2>
+  <p class="section-desc">Every agent is customised for your industry's specific questions, tone, and qualification criteria.</p>
+  <div class="tag-cloud">
+    <span class="tag">🏠 Real estate</span>
+    <span class="tag">✈️ Travel &amp; tourism</span>
+    <span class="tag">📄 Visa &amp; immigration</span>
+    <span class="tag">👥 Recruitment</span>
+    <span class="tag">🎨 Creative agencies</span>
+    <span class="tag">💼 Professional services</span>
+    <span class="tag">🛒 E-commerce</span>
+    <span class="tag">📈 Forex &amp; trading</span>
+    <span class="tag">🏥 Healthcare</span>
+    <span class="tag">⚖️ Legal services</span>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="background:var(--warm);">
+  <p class="section-label">What I do</p>
+  <h2 class="section-title">Full consulting services</h2>
+  <p class="section-desc">AI automation is my newest capability — but my consulting work spans 15 years across strategy, digital products, Web3, marketing, and fundraising.</p>
+  <div class="services-grid">
+
+    <div class="service-card featured">
+      <div class="service-icon">🤖</div>
+      <div class="service-badge">Most popular</div>
+      <h3>AI Agent & Automation</h3>
+      <p>Custom AI agents that handle your lead qualification, customer inquiries, and repetitive workflows — 24/7, without staff. Built for real estate, travel, recruitment, forex, and more.</p>
+      <ul>
+        <li>Lead qualification agents</li>
+        <li>Customer support automation</li>
+        <li>CRM integration & lead summaries</li>
+        <li>WhatsApp & Telegram delivery</li>
+      </ul>
+      <a href="https://bit.ly/4cw4dHi" target="_blank" class="btn-service">Try live demo →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Business & Strategy Consulting</h3>
+      <p>End-to-end advisory for startups and SMEs — from business model design and market research to competitive intelligence and go-to-market execution.</p>
+      <ul>
+        <li>Business model design</li>
+        <li>Market research & competitive analysis</li>
+        <li>Go-to-market strategy</li>
+        <li>SME growth advisory</li>
+      </ul>
+      <a href="mailto:c.emmaikehi@gmail.com" class="btn-service">Get in touch →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🚀</div>
+      <h3>Digital Product Strategy</h3>
+      <p>I've built four live digital products from scratch. I help founders think through product architecture, UX, positioning, and launch strategy before they spend a naira on development.</p>
+      <ul>
+        <li>Product architecture & roadmap</li>
+        <li>MVP scoping & prioritisation</li>
+        <li>Platform & marketplace strategy</li>
+        <li>Go-to-market planning</li>
+      </ul>
+      <a href="mailto:c.emmaikehi@gmail.com" class="btn-service">Get in touch →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">⛓</div>
+      <h3>Web3 & Blockchain Advisory</h3>
+      <p>Hands-on experience with Polygon blockchain, ERC-20 tokenomics, smart contract architecture, DEX listing, and play-to-earn ecosystem design. Real experience, not theory.</p>
+      <ul>
+        <li>Tokenomics design</li>
+        <li>Smart contract strategy</li>
+        <li>DEX listing & liquidity planning</li>
+        <li>Web3 product consulting</li>
+      </ul>
+      <a href="mailto:c.emmaikehi@gmail.com" class="btn-service">Get in touch →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📣</div>
+      <h3>Performance Marketing Strategy</h3>
+      <p>Built VibeRoute — a performance-based local advertising platform where businesses pay only for verified sales. I understand ROI-based marketing, commission models, and hyperlocal growth deeply.</p>
+      <ul>
+        <li>Performance marketing design</li>
+        <li>Local business growth strategy</li>
+        <li>Commission & affiliate structures</li>
+        <li>Digital advertising advisory</li>
+      </ul>
+      <a href="mailto:c.emmaikehi@gmail.com" class="btn-service">Get in touch →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">💰</div>
+      <h3>Fundraising & Investment Advisory</h3>
+      <p>Helped businesses restructure for investment, sourced funding, and evaluated SME grant applications worth millions. I can help you pitch, structure, and approach investors the right way.</p>
+      <ul>
+        <li>Pitch deck review & strategy</li>
+        <li>Investment readiness assessment</li>
+        <li>Grant application support</li>
+        <li>Investor sourcing advisory</li>
+      </ul>
+      <a href="mailto:c.emmaikehi@gmail.com" class="btn-service">Get in touch →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🤝</div>
+      <h3>Sales & Business Development</h3>
+      <p>Closed enterprise accounts including Etisalat and Fidelity Bank. I can help you build a sales strategy, develop a pipeline, and win accounts you've been struggling to close.</p>
+      <ul>
+        <li>Sales strategy & pipeline design</li>
+        <li>Enterprise account development</li>
+        <li>Partnership identification</li>
+        <li>Revenue diversification</li>
+      </ul>
+      <a href="mailto:c.emmaikehi@gmail.com" class="btn-service">Get in touch →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Fintech & App Consulting</h3>
+      <p>From SafeSpend (personal finance) to Akedo (student loans), I've built and advised on fintech products for African markets where global tools fall short. I understand the local nuances.</p>
+      <ul>
+        <li>Fintech product strategy</li>
+        <li>African market localisation</li>
+        <li>Personal finance app design</li>
+        <li>Banking integration advisory</li>
+      </ul>
+      <a href="mailto:c.emmaikehi@gmail.com" class="btn-service">Get in touch →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section style="background:var(--warm);" id="about">
+  <div class="about">
+    <div class="about-photo">
+      <img src="IMG_20240318_161147_184.jpg" alt="Emmanuel C. Ikehi" onerror="this.style.background='#c9a84c';this.style.minHeight='300px';">
+      <div class="badges">
+        <span class="badge">MBA — Lagos Business School</span>
+        <span class="badge">B.Eng Computer Engineering — Covenant University</span>
+        <span class="badge">PRINCE2 Practitioner</span>
+        <span class="badge">Associate Member, British Computer Society</span>
+        <span class="badge">Y Combinator Startup School Alumni</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="section-label">About</p>
+      <h2 class="section-title">15 years building systems that scale</h2>
+      <p>I'm a Nigerian entrepreneur, digital innovator, and AI automation consultant with over 15 years of experience building ventures across fintech, Web3, and digital commerce.</p>
+      <p>As Founder & CEO of Swapplee Technologies Ltd, I've independently conceptualised and launched four live digital products — spanning marketplace commerce, hyperlocal marketing, Web3 gaming, and personal finance. I apply that same systems thinking to every AI agent I build for clients.</p>
+      <p>I don't sell software. I build custom infrastructure that fits how your business actually works — and I stay until it does.</p>
+      <div class="btn-row" style="margin-top:2rem;">
+        <a href="mailto:c.emmaikehi@gmail.com" class="btn-primary">Email me directly</a>
+        <a href="https://linkedin.com/in/emmanuelikehimba" target="_blank" class="btn-outline">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <p class="section-label">Ready to start?</p>
+  <h2 class="section-title">Stop being your own receptionist</h2>
+  <p class="section-desc">Try a demo first. If it makes sense for your business, let's talk about building one customised for you.</p>
+  <div class="btn-row" style="justify-content:center;">
+    <a href="https://bit.ly/4cw4dHi" target="_blank" class="btn-primary">Try the property demo</a>
+    <a href="https://bit.ly/3QtB1YO" target="_blank" class="btn-outline">Try the forex demo</a>
+  </div>
+  <p class="contact-line">Or email directly: <a href="mailto:c.emmaikehi@gmail.com">c.emmaikehi@gmail.com</a> · Lagos, Nigeria · Available globally</p>
+</section>
+
+<footer>
+  <p>© 2025 Emmanuel C. Ikehi. AI Automation Consulting.</p>
+  <p><a href="https://amazon.com/author/emmanuelikehi" target="_blank" style="color:var(--muted);font-size:0.8rem;">Also an author →</a></p>
+</footer>
+
+</body>
+</html>
