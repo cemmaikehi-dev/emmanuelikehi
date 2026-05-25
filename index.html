@@ -27,32 +27,32 @@
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(250,250,248,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
   .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--black); text-decoration: none; }
   .nav-links { display: flex; gap: 2rem; }
-  .nav-links a { font-size: 0.85rem; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+  .nav-links a { font-size: 0.95rem; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
   .nav-links a:hover { color: var(--black); }
 
   /* HERO */
   .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 6rem 4rem; gap: 5rem; }
   .hero-text { }
-  .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .hero-eyebrow { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
   .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 4vw, 3.8rem); font-weight: 700; line-height: 1.15; margin-bottom: 1.5rem; }
   .hero-title em { font-style: italic; color: var(--gold); }
   .hero-sub { font-size: 1.12rem; color: var(--muted); max-width: 480px; line-height: 1.8; margin-bottom: 2.5rem; }
   .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary { display: inline-block; background: var(--black); color: var(--white); padding: 0.85rem 2rem; border-radius: 2px; font-size: 0.88rem; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
+  .btn-primary { display: inline-block; background: var(--black); color: var(--white); padding: 0.85rem 2rem; border-radius: 2px; font-size: 0.97rem; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
   .btn-primary:hover { background: #333; }
-  .btn-outline { display: inline-block; background: transparent; color: var(--black); padding: 0.85rem 2rem; border-radius: 2px; font-size: 0.88rem; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; border: 1px solid var(--black); transition: all 0.2s; }
+  .btn-outline { display: inline-block; background: transparent; color: var(--black); padding: 0.85rem 2rem; border-radius: 2px; font-size: 0.97rem; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; border: 1px solid var(--black); transition: all 0.2s; }
   .btn-outline:hover { background: var(--black); color: var(--white); }
   .hero-image { position: relative; }
   .photo-frame { position: relative; width: 100%; max-width: 420px; margin: 0 auto; }
   .photo-frame::before { content: ''; position: absolute; top: 20px; left: 20px; right: -20px; bottom: -20px; border: 2px solid var(--gold-light); border-radius: 2px; z-index: 0; }
-  .photo-frame img { width: 100%; height: 520px; object-fit: cover; object-position: center 15%; border-radius: 2px; position: relative; z-index: 1; display: block; }
+  .photo-frame img { width: 100%; height: 520px; object-fit: cover; object-position: center 40%; border-radius: 2px; position: relative; z-index: 1; display: block; }
   .cred-strip { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 1.5rem; }
-  .cred-item { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; }
+  .cred-item { font-size: 0.9rem; color: var(--muted); letter-spacing: 0.06em; }
   .cred-item span { color: var(--gold); margin-right: 0.4rem; }
 
   /* SECTION BASE */
   section { padding: 6rem 6rem; }
-  .section-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .section-label { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; margin-bottom: 1.2rem; line-height: 1.2; }
   .section-desc { color: var(--muted); max-width: 560px; line-height: 1.8; font-size: 1.05rem; }
 
@@ -61,16 +61,16 @@
   .pain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
   .pain-card { background: var(--white); padding: 1.75rem 1.5rem; border-radius: 2px; border: 1px solid var(--border); }
   .pain-icon { font-size: 1.5rem; margin-bottom: 1rem; }
-  .pain-card h3 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; }
-  .pain-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.7; }
+  .pain-card h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .pain-card p { font-size: 1rem; color: var(--muted); line-height: 1.7; }
 
   /* HOW */
   .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; position: relative; }
   .steps::before { content: ''; position: absolute; top: 1.5rem; left: 12.5%; right: 12.5%; height: 1px; background: var(--gold-light); }
   .step { position: relative; }
   .step-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 1rem; }
-  .step h3 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; }
-  .step p { font-size: 0.93rem; color: var(--muted); line-height: 1.7; }
+  .step h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .step p { font-size: 1rem; color: var(--muted); line-height: 1.7; }
 
   /* DEMOS */
   .demos { background: var(--black); color: var(--white); }
@@ -79,35 +79,35 @@
   .demos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
   .demo-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; padding: 2.5rem; transition: border-color 0.3s; }
   .demo-card:hover { border-color: var(--gold); }
-  .demo-tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+  .demo-tag { font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
   .demo-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--white); }
-  .demo-card p { font-size: 0.95rem; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 1.75rem; }
-  .demo-note { font-size: 0.78rem; color: rgba(255,255,255,0.3); margin-bottom: 1.5rem; font-style: italic; }
-  .btn-gold { display: inline-block; background: var(--gold); color: var(--black); padding: 0.8rem 1.75rem; border-radius: 2px; font-size: 0.85rem; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; transition: opacity 0.2s; }
+  .demo-card p { font-size: 1.02rem; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 1.75rem; }
+  .demo-note { font-size: 0.9rem; color: rgba(255,255,255,0.3); margin-bottom: 1.5rem; font-style: italic; }
+  .btn-gold { display: inline-block; background: var(--gold); color: var(--black); padding: 0.8rem 1.75rem; border-radius: 2px; font-size: 0.95rem; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; transition: opacity 0.2s; }
   .btn-gold:hover { opacity: 0.85; }
 
   /* INDUSTRIES */
   .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
-  .tag { font-size: 0.82rem; padding: 0.4rem 1rem; border: 1px solid var(--border); border-radius: 99px; color: var(--muted); background: var(--warm); }
+  .tag { font-size: 0.92rem; padding: 0.4rem 1rem; border: 1px solid var(--border); border-radius: 99px; color: var(--muted); background: var(--warm); }
 
   /* ABOUT */
   .about { display: grid; grid-template-columns: 340px 1fr; gap: 6rem; align-items: start; }
   .about-photo { position: relative; }
-  .about-photo img { width: 100%; height: 400px; object-fit: cover; object-position: center 15%; border-radius: 2px; display: block; }
+  .about-photo img { width: 100%; height: 400px; object-fit: cover; object-position: center 40%; border-radius: 2px; display: block; }
   .badges { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem; }
-  .badge { font-size: 0.75rem; color: var(--muted); padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 2px; display: inline-block; }
-  .about-text p { color: var(--muted); line-height: 1.9; font-size: 1.05rem; margin-bottom: 1rem; }
+  .badge { font-size: 0.88rem; color: var(--muted); padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 2px; display: inline-block; }
+  .about-text p { color: var(--muted); line-height: 1.9; font-size: 1.08rem; margin-bottom: 1rem; }
 
   /* CTA */
   .cta { background: var(--warm); text-align: center; padding: 8rem 6rem; }
   .cta .section-title { max-width: 620px; margin: 0.5rem auto 1rem; }
   .cta .section-desc { margin: 0 auto 2.5rem; }
-  .contact-line { font-size: 0.85rem; color: var(--muted); margin-top: 1.25rem; }
+  .contact-line { font-size: 0.95rem; color: var(--muted); margin-top: 1.25rem; }
   .contact-line a { color: var(--black); }
 
   /* FOOTER */
   footer { padding: 2rem 6rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-  footer p { font-size: 0.8rem; color: var(--muted); }
+  footer p { font-size: 0.9rem; color: var(--muted); }
 
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
   .service-card { background: var(--white); border: 1px solid var(--border); border-radius: 2px; padding: 2rem; position: relative; transition: box-shadow 0.2s; }
@@ -115,12 +115,12 @@
   .service-card.featured { border-color: var(--gold); }
   .service-icon { font-size: 1.6rem; margin-bottom: 1rem; }
   .service-badge { position: absolute; top: 1.25rem; right: 1.25rem; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; background: var(--gold); color: var(--white); padding: 0.25rem 0.6rem; border-radius: 2px; }
-  .service-card h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.6rem; }
-  .service-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+  .service-card h3 { font-size: 1.1rem; font-weight: 500; margin-bottom: 0.6rem; }
+  .service-card p { font-size: 1rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
   .service-card ul { list-style: none; margin-bottom: 1.25rem; }
-  .service-card ul li { font-size: 0.88rem; color: var(--muted); padding: 0.2rem 0; padding-left: 1rem; position: relative; }
+  .service-card ul li { font-size: 0.95rem; color: var(--muted); padding: 0.2rem 0; padding-left: 1rem; position: relative; }
   .service-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
-  .btn-service { font-size: 0.82rem; color: var(--black); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--gold); padding-bottom: 1px; transition: color 0.2s; }
+  .btn-service { font-size: 0.92rem; color: var(--black); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--gold); padding-bottom: 1px; transition: color 0.2s; }
   .btn-service:hover { color: var(--gold); }
   @media (max-width: 900px) {
     nav { padding: 1rem 1.25rem; }
