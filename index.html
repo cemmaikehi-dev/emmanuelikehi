@@ -376,6 +376,11 @@
     section{ padding:4rem 0; }
     .hero{ padding-top:calc(var(--edge) + 4.5rem); }
   }
+  /* Book feature */
+  .book-feature{ display:grid; grid-template-columns:260px 1fr; gap:4rem; align-items:center; border-top:1px solid var(--line); padding-top:4rem; }
+  .book-cover-link img{ width:100%; height:auto; box-shadow:0 18px 40px rgba(23,25,22,0.28); transition:transform .25s ease; }
+  .book-cover-link:hover img{ transform:translateY(-4px); }
+  @media (max-width: 760px){ .book-feature{ grid-template-columns:1fr; gap:2rem; } .book-cover-link{ max-width:220px; } }
 </style>
 </head>
 <body>
@@ -393,6 +398,7 @@
         <li><a href="#ventures">Ventures</a></li>
         <li><a href="#digital">Digital</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#book">Book &amp; Tools</a></li> 
         <li><a href="#writing">Writing</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -695,7 +701,24 @@
       </div>
     </div>
   </section>
-
+  <!-- BOOK & TOOLS -->
+  <section id="book" class="wrap">
+    <div class="book-feature">
+      <a href="/tools/" class="book-cover-link reveal" aria-label="The Blank Sheet Operator companion tools">
+        <img src="/tools/images/book-cover.jpg" alt="Cover of The Blank Sheet Operator by Emmanuel C. Ikehi" loading="lazy" width="300" height="450">
+      </a>
+      <div class="reveal">
+        <p class="eyebrow">New book</p>
+        <h2 style="margin:0.7rem 0 1rem;">The Blank Sheet Operator</h2>
+        <p class="lede" style="margin-bottom:1rem;"><em>Structuring, Pricing, and Delivering High-Value Ventures in Volatile Markets.</em></p>
+        <p class="lede" style="margin-bottom:1.8rem;">How an operator takes an ambiguous opportunity, tests whether it deserves capital, models the economics, structures the deal, and decides whether to scale, pivot, pause, sell or kill. Eighteen chapters, each with a practical tool.</p>
+        <div class="btn-row">
+          <a href="/tools/" class="btn btn-solid">Free companion tools</a>
+          <a href="https://amazon.com/author/emmanuelikehi" target="_blank" rel="noopener" class="btn btn-line">Get the book</a>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- WRITING -->
   <section id="writing" class="wrap">
     <div class="section-head reveal">
@@ -703,6 +726,13 @@
       <h2>Books I've written.</h2>
     </div>
     <div class="writing-list">
+            <div class="writing-row reveal">
+        <div class="writing-title">
+          <h3>The Blank Sheet Operator: Structuring, Pricing, and Delivering High-Value Ventures in Volatile Markets</h3>
+          <span class="writing-meta">2026</span>
+        </div>
+        <a href="/tools/" class="link-arrow">Companion tools <span>→</span></a>
+      </div>
       <div class="writing-row reveal">
         <div class="writing-title">
           <h3>Wealth Creation in the Digital Age: Strategies for Success</h3>
